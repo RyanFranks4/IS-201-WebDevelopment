@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8">
+  <title>Magic 8 Ball</title>
+  <style>
+    body {
+      background: #1c1c1c;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .magic-ball {
+      background: radial-gradient(circle, #000 60%, #333 100%);
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    .response {
+      background: #1e1e1e;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #00faff;
+    }
+
+    .button-group {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00faff;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00c6d4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Magic 8 Ball</h1>
+
+  <div class="magic-ball">
+    <div class="response" id="response">Ask me anything</div>
+  </div>
+
+  <div class="button-group">
+    <button onclick="shakeBall()">Shake</button>
+    <button onclick="resetBall()">Reset</button>
+  </div>
+
+  <script>
+    const responses = [
+      "It is certain",
+      "Without a doubt",
+      "You may rely on it",
+      "Yes – definitely",
+      "It is decidedly so",
+      "As I see it, yes",
+      "Most likely",
+      "Outlook good",
+      "Yes",
+      "Signs point to yes",
+      "Reply hazy, try again",
+      "Ask again later",
+      "Better not tell you now",
+      "Cannot predict now",
+      "Concentrate and ask again",
+      "Don't count on it",
+      "My reply is no",
+      "My sources say no",
+      "Outlook not so good",
+      "Very doubtful"
+    ];
+
+    function shakeBall() {
+      const responseEl = document.getElementById('response');
+      const randomIndex = Math.floor(Math.random() * responses.length);
+      const answer = responses[randomIndex];
+      responseEl.textContent = answer;
+    }
+
+    function resetBall() {
+      document.getElementById('response').textContent = 'Ask me anything';
+    }
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <a href="scratch.html">Return to Scratch Page</a>
+
+</body>
+</html>
